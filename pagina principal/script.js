@@ -1,57 +1,56 @@
-document.addEventListener("DOMContentLoaded", function() {
-      // Animation for content appearance
-      const content = document.querySelector('.content');
-      content.classList.add('fade-in');
-  
-      // Button click effect
-      const buttons = document.querySelectorAll('nav ul li a');
-      buttons.forEach(button => {
-          button.addEventListener('click', function(e) {
-              e.preventDefault();
-              button.classList.add('clicked');
-              setTimeout(() => {
-                  button.classList.remove('clicked');
-                  window.location.href = button.href;
-              }, 300);
-          });
-      });
-  });
+document.addEventListener("DOMContentLoaded", function () {
+    // Animação de entrada de conteúdo
+    const content = document.querySelector('.content');
+    content.classList.add('fade-in');
 
-  document.addEventListener("DOMContentLoaded", () => {
+    // Efeito de clique nos botões do menu
+    const buttons = document.querySelectorAll('nav ul li a');
+    buttons.forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            button.classList.add('clicked');
+            setTimeout(() => {
+                button.classList.remove('clicked');
+                window.location.href = button.href;
+            }, 300);
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
 
     // Criar bolhas flutuantes
-    for (let i = 0; i < 10; i++) { // Ajuste o número de bolhas aqui
+    for (let i = 0; i < 10; i++) {
         const bubble = document.createElement("div");
         bubble.classList.add("bubble");
-        const size = Math.random() * 50 + 20; // Tamanho aleatório
+        const size = Math.random() * 50 + 20;
         bubble.style.width = size + "px";
         bubble.style.height = size + "px";
-        bubble.style.left = Math.random() * 100 + "vw"; // Posição horizontal aleatória
-        bubble.style.animationDuration = (Math.random() * 5 + 5) + "s"; // Duração aleatória
+        bubble.style.left = Math.random() * 100 + "vw";
+        bubble.style.animationDuration = (Math.random() * 5 + 5) + "s";
         body.appendChild(bubble);
     }
 });
 
-
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
     function showSlide(index) {
         slides[currentSlide].classList.remove('active');
-        slides[currentSlide].classList.add('previous');
-        
         currentSlide = index;
         if (currentSlide >= slides.length) {
             currentSlide = 0;
+        } else if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
         }
-        
         slides[currentSlide].classList.add('active');
     }
 
     slides[currentSlide].classList.add('active');
 
+    // Suporte para deslizar em dispositivos móveis
     document.getElementById('slideshow-container').addEventListener('touchstart', handleTouchStart, false);
     document.getElementById('slideshow-container').addEventListener('touchmove', handleTouchMove, false);
 
@@ -63,18 +62,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function handleTouchMove(event) {
-        if (!xStart) {
-            return;
-        }
+        if (!xStart) return;
 
         let xEnd = event.touches[0].clientX;
         let xDiff = xStart - xEnd;
 
-        if (Math.abs(xDiff) > 50) { // Sensibilidade
+        if (Math.abs(xDiff) > 50) {
             if (xDiff > 0) {
-                showSlide(currentSlide + 1); // Próximo slide
+                showSlide(currentSlide + 1);
             } else {
-                showSlide(currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1); // Slide anterior
+                showSlide(currentSlide - 1);
             }
             xStart = null;
         }

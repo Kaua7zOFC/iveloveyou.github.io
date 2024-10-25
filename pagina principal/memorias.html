@@ -6,69 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Memórias</title>
       <link rel="stylesheet" href="styles.css">
-      <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            // Função para avançar/recuar slides
-            function plusSlides(n) {
-                  showSlides(slideIndex += n);
-            }
-
-            // Função para ir para um slide específico
-            function currentSlide(n) {
-                  showSlides(slideIndex = n);
-            }
-
-            // Mostra o slide atual
-            function showSlides(n) {
-                  let i;
-                  let slides = document.getElementsByClassName("slide");
-                  let dots = document.getElementsByClassName("dot");
-
-                  if (n > slides.length) {
-                        slideIndex = 1;
-                  }
-                  if (n < 1) {
-                        slideIndex = slides.length;
-                  }
-
-                  for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                  }
-
-                  for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                  }
-
-                  slides[slideIndex - 1].style.display = "block";
-                  dots[slideIndex - 1].className += " active";
-            }
-
-            // Para mudar os slides automaticamente
-            let autoSlideIndex = 0;
-            function autoSlides() {
-                  let i;
-                  let slides = document.getElementsByClassName("slide");
-
-                  for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                  }
-
-                  autoSlideIndex++;
-
-                  if (autoSlideIndex > slides.length) {
-                        autoSlideIndex = 1;
-                  }
-
-                  slides[autoSlideIndex - 1].style.display = "block";
-
-                  setTimeout(autoSlides, 3000); // Muda a imagem a cada 3 segundos
-            }
-
-            autoSlides();
-
-      </script>
+      <script src="script.js" defer></script>
 </head>
 
 <body>
