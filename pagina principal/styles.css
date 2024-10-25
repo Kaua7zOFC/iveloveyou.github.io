@@ -19,144 +19,110 @@ body {
       margin: auto;
       padding: 20px;
       border-radius: 15px;
-      /* Bordas mais arredondadas */
       background-color: rgba(255, 255, 255, 0.9);
-      /* Fundo levemente transparente */
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      /* Sombra mais suave */
       backdrop-filter: blur(10px);
-      /* Efeito de desfoque */
       border: 1px solid rgba(255, 255, 255, 0.2);
-      /* Borda sutil */
 }
 
-/* Título */
-h1 {
-      text-align: center;
-      color: #ffeb3b;
-      /* Cor do título */
-      font-size: 3em;
-      /* Tamanho maior */
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-      /* Sombra para o título */
-      margin-bottom: 20px;
-      /* Espaçamento inferior */
-}
-
-/* Estilo dos Parágrafos */
-.letter p {
-      line-height: 1.7;
-      /* Espaçamento entre linhas */
-      margin: 15px 0;
-      /* Margem aumentada */
-      color: #333;
-      /* Cor do texto */
-      font-size: 1.1em;
-      /* Ajuste no tamanho */
+/* Estilo do Slideshow */
+.slideshow-container {
       position: relative;
-      /* Para efeito de destaque */
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Destaque */
-.highlight {
-      color: #e74c3c;
-      /* Cor para o destaque */
+/* Slides */
+.slide {
+      display: none;
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+}
+
+.fade {
+      animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+      from {
+            opacity: 0.4;
+      }
+
+      to {
+            opacity: 1;
+      }
+}
+
+/* Botões de navegação */
+.prev,
+.next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: #ffeb3b;
       font-weight: bold;
-      font-size: 1.3em;
-      /* Tamanho do destaque maior */
-      text-decoration: underline;
-      /* Sublinhado */
-}
-
-/* Navegação */
-
-nav ul {
-      list-style: none;
-      padding: 10px;
-      margin: 10px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      /* Permite que os itens se movam para a próxima linha se necessário */
-}
-
-nav ul li {
-      margin: 10px 15px;
-}
-
-nav ul li a {
-      background: hsla(60, 1%, 23%, 0.308);
-      /* Fundo mais claro para links */
-      text-decoration: none;
-      color: #ffffff;
-      /* Texto escuro */
       font-size: 18px;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: 2px solid #ffeb3b;
-      border-radius: 25px;
-      /* Borda mais arredondada */
-      transition: all 0.3s ease;
+      transition: 0.6s ease;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(255, 235, 59, 0.8);
+      user-select: none;
+      transform: translateY(-50%);
 }
 
-nav ul li a:hover {
-      color: #fff;
-      /* Texto branco no hover */
-      background: #e74c3c;
-      /* Fundo vermelho no hover */
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
-      /* Sombra no hover */
+.prev:hover,
+.next:hover {
+      background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Animações */
-@keyframes fadeInDown {
-      0% {
-            opacity: 0;
-            transform: translateY(-50px);
-      }
-
-      100% {
-            opacity: 1;
-            transform: translateY(0);
-      }
+.prev {
+      left: 10px;
 }
 
-@keyframes fadeInUp {
-      0% {
-            opacity: 0;
-            transform: translateY(50px);
-      }
-
-      100% {
-            opacity: 1;
-            transform: translateY(0);
-      }
+.next {
+      right: 10px;
 }
 
-/* Media Query para Dispositivos Móveis */
+/* Indicadores (pontos) */
+.dots-container {
+      text-align: center;
+      position: relative;
+      top: 10px;
+}
+
+.dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+      background-color: #ffeb3b;
+}
+
+/* Ajustes para mobile */
 @media (max-width: 600px) {
-      nav ul {
-            flex-direction: column;
-            align-items: center;
+      .slide {
+            height: 300px;
       }
 
-      nav ul li {
-            margin: 10px 0;
-      }
-
-      h1 {
-            font-size: 2.5em;
-            /* Ajustar o tamanho para telas pequenas */
-      }
-
-      .letter p {
-            font-size: 1em;
-            /* Ajustar o tamanho para telas pequenas */
-      }
-
-      .container {
-            padding: 15px;
-            /* Ajustar o padding em telas pequenas */
+      .prev,
+      .next {
+            font-size: 14px;
+            padding: 12px;
       }
 }
