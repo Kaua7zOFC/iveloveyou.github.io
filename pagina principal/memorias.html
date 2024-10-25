@@ -2,55 +2,79 @@
 <html lang="pt">
 
 <head>
-
       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Memórias</title>
       <link rel="stylesheet" href="styles.css">
       <script src="script.js" defer></script>
-
 </head>
 
 <body>
 
       <nav>
-
             <ul>
-
                   <li><a href="inicio.html">Início</a></li>
-
-
             </ul>
-
       </nav>
 
       <div class="content">
             <h1>Memórias</h1>
             <p>Aqui tem algumas fotos de momentos inesquecíveis que passamos juntos...</p>
+
             <div class="slideshow-container" id="slideshow-container">
-                  <div class="slide" style="background-image: url('img/1.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/2.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/3.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/4.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/5.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/6.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/7.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/8.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/9.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/10.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/11.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/12.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/13.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/14.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/15.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/16.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/17.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/18.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/19.jpeg');"></div>
-                  <div class="slide" style="background-image: url('img/20.jpeg');"></div>
-v                 <div class="slide" style="background-image: url('img/21.jpeg');"></div>
-                  <!-- Adicione mais fotos aqui -->
-              </div>
-              <script src="script.js"></script>
+                  <!-- Slides com imagens -->
+                  <div class="slide fade" style="background-image: url('img/1.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/2.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/3.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/4.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/5.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/6.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/7.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/8.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/9.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/10.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/11.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/12.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/13.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/14.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/15.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/16.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/17.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/18.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/19.jpeg');"></div>
+                  <div class="slide fade" style="background-image: url('img/20.jpeg');"></div>
+v                 <div class="slide fade" style="background-image: url('img/21.jpeg');"></div>
+            </div>
+
+            <!-- Botões de navegação -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Indicadores de cada slide -->
+            <div class="dots-container" style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                  <span class="dot" onclick="currentSlide(4)"></span>
+                  <span class="dot" onclick="currentSlide(5)"></span>
+                  <span class="dot" onclick="currentSlide(6)"></span>
+                  <span class="dot" onclick="currentSlide(7)"></span>
+                  <span class="dot" onclick="currentSlide(8)"></span>
+                  <span class="dot" onclick="currentSlide(9)"></span>
+                  <span class="dot" onclick="currentSlide(10)"></span>
+                  <span class="dot" onclick="currentSlide(11)"></span>
+                  <span class="dot" onclick="currentSlide(12)"></span>
+                  <span class="dot" onclick="currentSlide(13)"></span>
+                  <span class="dot" onclick="currentSlide(14)"></span>
+                  <span class="dot" onclick="currentSlide(15)"></span>
+                  <span class="dot" onclick="currentSlide(16)"></span>
+                  <span class="dot" onclick="currentSlide(17)"></span>
+                  <span class="dot" onclick="currentSlide(18)"></span>
+                  <span class="dot" onclick="currentSlide(19)"></span>
+                  <span class="dot" onclick="currentSlide(20)"></span>
+                  <span class="dot" onclick="currentSlide(21)"></span>
+
+            </div>
       </div>
 
 </body>
